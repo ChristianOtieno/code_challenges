@@ -28,16 +28,16 @@ function readLine() {
 function pageCount(n, p) {
     let x = 0;
     if (p == n){
-        return n;
+        return 0;
     }
     
     if (p < n/2) {
         x = p/2;
-        return x;
+        return x | 0;
     }
     else {
         x = (p-1)/n;
-        return x;
+        return x | 0;
     }
 }
 
