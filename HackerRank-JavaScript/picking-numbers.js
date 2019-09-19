@@ -30,19 +30,26 @@ function readLine() {
  */
 
 function pickingNumbers(a) {
-    let pickingarray = a.sort((a, b) => a - b);
+    // Read input
+    var n = parseInt(readLine());
+    a = a.map(Number);
 
-    if (a.length <= 1) {
-        return 0;
+    var map = new Array(100);
+    map.fill(0);
+
+    // Populate map
+    for(var i = 0; i < a.length; i++){
+        map[a[i]]++;
     }
-    let maxCount = 0;
-    let count = 0;
-    for (let i = 1; i < pickingarray.length; i++) {
-        if (Math.abs(pickingarray[i] - pickingarray[i + 1]) <= 1) {
-            maxCount++;
+
+    // Find the max sum of two values with keys within one of each other
+    var max = 0;
+    for(var i = 1; i < map.length; i++){
+        if(map[i] + map[i - 1] > max){
+            max = map[i] + map[i - 1];
         }
     }
-    return maxCount;
+    return max
 }
 
 function main() {
