@@ -56,3 +56,10 @@ function main() {
 
     ws.end();
 }
+
+// Algorithm
+
+//     Read the value of the array heights.
+//     Initialize a variable max with the height[0].
+//     Traverse through the array heights.
+//     If you find height[i] to be greater than the value of max. Change the value of max to this height element.
